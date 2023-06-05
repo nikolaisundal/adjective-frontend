@@ -50,7 +50,7 @@ function MyComponent(): JSX.Element {
     event.preventDefault();
     setIsLoading(true);
 
-    fetch("https://adjective-backend-93w1fdb8q-sniko.vercel.app/generate", {
+    fetch("https://https://adjective-backend.vercel.app/generate", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
