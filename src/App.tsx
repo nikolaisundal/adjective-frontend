@@ -133,16 +133,16 @@ function MyComponent(): JSX.Element {
         handleSubmit={handleSubmit}
         isLoading={isLoading}
       />
-      <div className="w-11/12 sm:w-5/6 md:w-3/4 mx-auto max-w-4xl mt-20 mb-20 p-5 rounded-lg">
-        {generatedText ? (
-          <StoryWindow
-            generatedText={generatedText}
-            handleStoryOnChange={handleStoryOnChange}
-          />
-        ) : (
-          <HowToDiv />
-        )}
-      </div>
+
+      {generatedText ? (
+        <StoryWindow
+          generatedText={generatedText}
+          handleStoryOnChange={handleStoryOnChange}
+        />
+      ) : (
+        <HowToDiv />
+      )}
+
       <StoryItemGroup
         prompt={prompt}
         handleOnChange={handleOnChange}
