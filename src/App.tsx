@@ -148,9 +148,7 @@ function MyComponent(): JSX.Element {
         handleOnChange={handleOnChange}
         handleRemove={handleRemove}
       />
-      <div className="h-96 flex justify-end items-end w-full">
-        <div className="h-24 mr-4">Created by Niko Lai</div>
-      </div>
+      <div className="h-96 flex justify-end items-end w-full"></div>
     </div>
   );
 }
