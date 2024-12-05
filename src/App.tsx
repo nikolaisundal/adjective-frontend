@@ -39,6 +39,7 @@ interface StoryListItemProps {
   name: string;
   colour: string;
   prompt: Prompt;
+  handleAdd: (name: string, inputValue: string) => void;
 }
 
 function MyComponent(): JSX.Element {
@@ -128,11 +129,20 @@ function MyComponent(): JSX.Element {
 
   return (
     <div className="mt-20">
-      <InputGroup
+      {/* <InputGroup
         handleAdd={handleAdd}
         handleSubmit={handleSubmit}
         isLoading={isLoading}
-      />
+      /> */}
+
+      <div className="w-full flex justify-center">
+        <h1 className="text-7xl">
+          {`Welcome to `}
+          <span className="bg-gradient-to-r from-blue-600 via-pink-500 to-teal-500 inline-block text-transparent bg-clip-text">
+            Adjective
+          </span>
+        </h1>
+      </div>
 
       {generatedText ? (
         <StoryWindow
@@ -147,6 +157,7 @@ function MyComponent(): JSX.Element {
         prompt={prompt}
         handleOnChange={handleOnChange}
         handleRemove={handleRemove}
+        handleAdd={handleAdd}
       />
       <div className="h-96 flex justify-end items-end w-full"></div>
     </div>
