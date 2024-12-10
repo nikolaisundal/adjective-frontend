@@ -16,11 +16,11 @@ export default function HowToDiv() {
             <ul>
               <li className="py-2">
                 Adjective is a story generator which uses AI🤖 to create a story
-                based on your inputs.
+                based on your input.
               </li>
               <li className="py-2 px-4">
-                -Add names, adjectives, a mood and a setting in the inputs
-                above. ⬆
+                -Click the buttons to add names, adjectives, a mood and a
+                setting.
               </li>
               <li className="py-2 px-4">
                 -Your chosen words will appear in the list below.⬇

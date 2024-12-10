@@ -48,7 +48,7 @@ export default function StoryItemGroup({
     }
   };
   return (
-    <div className="mt-10 flex flex-col sm:flex-row sm:justify-evenly w-fit sm:w-[34rem] lg:w-[50rem] max-w-4xl h-auto mx-auto">
+    <div className="bg-slate-100 rounded-lg mt-10 flex flex-col sm:flex-row sm:justify-evenly w-fit sm:w-[34rem] lg:w-[50rem] max-w-4xl h-auto mx-auto">
       <div className="p-4 sm:w-96">
         <div className="mb-4">
           <h1 className="font-bold mr-1">Names:</h1>
@@ -93,9 +93,9 @@ export default function StoryItemGroup({
           ) : (
             <button
               onClick={() => setNameInputActive(true)}
-              className={`border-2 p-2 mt-2 mx-auto sm:mr-2 border-black whitespace-pre-wrap bg-blue-500 rounded-lg w-60 cursor-pointer min-h-[3rem] font-bold`}
+              className={`border-2 p-2 mt-2 mx-auto sm:mr-2 border-black whitespace-pre-wrap bg-[#FFC0CB] rounded-lg w-60 cursor-pointer min-h-[3rem] font-bold`}
             >
-              <p className="text-center text-gray-200">Add a name</p>
+              <p className="text-center text-slate-800">Add a name</p>
             </button>
           )}
           <ul>
@@ -107,7 +107,7 @@ export default function StoryItemGroup({
                   id={name.id}
                   handleOnChange={handleOnChange}
                   handleRemove={handleRemove}
-                  colour={"bg-blue-500"}
+                  colour={"bg-[#FFC0CB]"}
                 />
               </li>
             ))}
@@ -122,13 +122,13 @@ export default function StoryItemGroup({
                 word={prompt.mood}
                 handleOnChange={handleOnChange}
                 handleRemove={handleRemove}
-                colour={"bg-purple-800"}
+                colour={"bg-[#C4A1FF]"}
               />
             </li>
           </ul>
         </div>
         <div className="mb-4">
-          <h1 className="font-bold mr-1">Setting:</h1>
+          <h1 className="font-bold mr-1 ">Setting:</h1>
           <ul>
             <li>
               <StoryListItem
@@ -136,7 +136,7 @@ export default function StoryItemGroup({
                 word={prompt.setting}
                 handleOnChange={handleOnChange}
                 handleRemove={handleRemove}
-                colour={"bg-teal-500"}
+                colour={"bg-[#FDFD96]"}
               />
             </li>
           </ul>
@@ -185,9 +185,9 @@ export default function StoryItemGroup({
         ) : (
           <button
             onClick={() => setAdjectiveInputActive(true)}
-            className={`border-2 p-2 mt-2 mx-auto sm:mr-2 border-black whitespace-pre-wrap bg-emerald-700 rounded-lg w-60 cursor-pointer min-h-[3rem] font-bold`}
+            className={`border-2 p-2 mt-2 mx-auto sm:mr-2 border-black whitespace-pre-wrap bg-[#90EE90] rounded-lg w-60 cursor-pointer min-h-[3rem] font-bold`}
           >
-            <p className="text-center text-gray-200">Add an adjective</p>
+            <p className="text-center text-slate-800">Add an adjective</p>
           </button>
         )}
         <div className="sm:flex sm:justify-start">
@@ -200,7 +200,7 @@ export default function StoryItemGroup({
                   id={adjective.id}
                   handleOnChange={handleOnChange}
                   handleRemove={handleRemove}
-                  colour={"bg-emerald-700"}
+                  colour={"bg-[#90EE90]"}
                 />
               </li>
             ))}

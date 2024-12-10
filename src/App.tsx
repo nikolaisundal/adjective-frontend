@@ -129,16 +129,10 @@ function MyComponent(): JSX.Element {
 
   return (
     <div className="mt-20">
-      {/* <InputGroup
-        handleAdd={handleAdd}
-        handleSubmit={handleSubmit}
-        isLoading={isLoading}
-      /> */}
-
-      <div className="w-full flex justify-center">
-        <h1 className="text-7xl">
+      <div className="w-full flex justify-center text-center">
+        <h1 className="text-7xl text-slate-800">
           {`Welcome to `}
-          <span className="bg-gradient-to-r from-blue-600 via-pink-500 to-teal-500 inline-block text-transparent bg-clip-text">
+          <span className=" bg-gradient-to-r from-[#FFC0CB] via-[#FDFD96] to-[#90EE90] inline-block text-transparent bg-clip-text leading-relaxed">
             Adjective
           </span>
         </h1>
@@ -152,13 +146,18 @@ function MyComponent(): JSX.Element {
       ) : (
         <HowToDiv />
       )}
-
+      <InputGroup
+        handleAdd={handleAdd}
+        handleSubmit={handleSubmit}
+        isLoading={isLoading}
+      />
       <StoryItemGroup
         prompt={prompt}
         handleOnChange={handleOnChange}
         handleRemove={handleRemove}
         handleAdd={handleAdd}
       />
+
       <div className="h-96 flex justify-end items-end w-full"></div>
     </div>
   );

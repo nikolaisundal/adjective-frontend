@@ -106,7 +106,7 @@ export default function StoryListItem({
             className={`relative border-2 p-2 border-black whitespace-pre-wrap rounded-lg ${colour} w-60 cursor-pointer min-h-[3rem] font-bold`}
             onClick={handleInputModeActive}
           >
-            <p className="text-center text-gray-200">
+            <p className="text-center text-slate-800">
               {word !== "" ? word : `Add a ${name}`}
             </p>
           </div>
