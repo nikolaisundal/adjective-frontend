@@ -43,7 +43,7 @@ export default function StoryWindow({
         </>
       ) : (
         <div className="cursor-pointer" onClick={handleInputModeActive}>
-          <div className="mt-4 whitespace-pre-wrap p-4 text-left bg-amber-100 rounded-lg font-semibold border border-black">
+          <div className="mt-4 whitespace-pre-wrap p-4 text-left bg-slate-100 rounded-lg font-semibold border border-black">
             <p>{generatedText}</p>
           </div>
         </div>

@@ -48,14 +48,14 @@ export default function StoryItemGroup({
     }
   };
   return (
-    <div className="bg-slate-100 rounded-lg mt-10 flex flex-col sm:flex-row sm:justify-evenly w-fit sm:w-[34rem] lg:w-[50rem] max-w-4xl h-auto mx-auto">
+    <div className="bg-slate-100 rounded-lg mt-20 flex flex-col sm:flex-row sm:justify-evenly w-fit sm:w-[34rem] lg:w-[50rem] max-w-4xl h-auto mx-auto">
       <div className="p-4 sm:w-96">
         <div className="mb-4">
           <h1 className="font-bold mr-1">Names:</h1>
           {nameInputActive ? (
             <div className="relative z-10 w-fit">
               <button
-                className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-red-600 w-11 p-1 rounded-full textblack hover:text-gray-600 border-2 border-black text-lg"
+                className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-red-400 w-11 p-1 rounded-full textblack hover:text-gray-600 border-2 border-black text-lg"
                 onMouseDown={() => {
                   setNameInputActive(false);
                   setNameInputText("");
@@ -64,7 +64,7 @@ export default function StoryItemGroup({
                 <div className="pb-1 font-bold">&times;</div>
               </button>
               <button
-                className="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2 bg-green-600 w-11 px-1 py-2 rounded-full textblack hover:text-gray-600 border-2 border-black text-sm"
+                className="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2 bg-green-300 w-11 px-1 py-2 rounded-full textblack hover:text-gray-600 border-2 border-black text-sm"
                 onMouseDown={() => handleClick("names", nameInputText)}
               >
                 <div className="pb-1 font-bold">&#x2713;</div>
@@ -127,7 +127,7 @@ export default function StoryItemGroup({
             </li>
           </ul>
         </div>
-        <div className="mb-4">
+        <div className="sm:mb-4">
           <h1 className="font-bold mr-1 ">Setting:</h1>
           <ul>
             <li>
@@ -142,12 +142,12 @@ export default function StoryItemGroup({
           </ul>
         </div>
       </div>
-      <div className=" p-4 w-full border-blue-600">
+      <div className=" px-4 pb-4 sm:pt-4 w-full border-blue-600">
         <h1 className="font-bold mr-1">Adjectives:</h1>
         {adjectiveInputActive ? (
           <div className="relative z-10 w-fit">
             <button
-              className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-red-600 w-11 p-1 rounded-full textblack hover:text-gray-600 border-2 border-black text-lg"
+              className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-red-400 w-11 p-1 rounded-full textblack hover:text-gray-600 border-2 border-black text-lg"
               onMouseDown={() => {
                 setAdjectiveInputActive(false);
                 setAdjectiveInputText("");
@@ -156,7 +156,7 @@ export default function StoryItemGroup({
               <div className="pb-1 font-bold">&times;</div>
             </button>
             <button
-              className="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2 bg-green-600 w-11 px-1 py-2 rounded-full textblack hover:text-gray-600 border-2 border-black text-sm"
+              className="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2 bg-green-300 w-11 px-1 py-2 rounded-full textblack hover:text-gray-600 border-2 border-black text-sm"
               onMouseDown={() => handleClick("adjectives", adjectiveInputText)}
             >
               <div className="pb-1 font-bold">&#x2713;</div>
@@ -185,7 +185,7 @@ export default function StoryItemGroup({
         ) : (
           <button
             onClick={() => setAdjectiveInputActive(true)}
-            className={`border-2 p-2 mt-2 mx-auto sm:mr-2 border-black whitespace-pre-wrap bg-[#90EE90] rounded-lg w-60 cursor-pointer min-h-[3rem] font-bold`}
+            className={`border-2 p-2 mt-2 mx-auto sm:mr-2 border-black whitespace-pre-wrap bg-blue-300 rounded-lg w-60 cursor-pointer min-h-[3rem] font-bold`}
           >
             <p className="text-center text-slate-800">Add an adjective</p>
           </button>
@@ -200,7 +200,7 @@ export default function StoryItemGroup({
                   id={adjective.id}
                   handleOnChange={handleOnChange}
                   handleRemove={handleRemove}
-                  colour={"bg-[#90EE90]"}
+                  colour={"bg-blue-300"}
                 />
               </li>
             ))}

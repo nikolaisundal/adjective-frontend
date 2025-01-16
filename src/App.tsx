@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import InputGroup from "./InputGroup";
+import Generate from "./Generate";
 import StoryWindow from "./StoryWindow";
 import StoryItemGroup from "./StoryItemGroup";
 import HowToDiv from "./HowToDiv";
@@ -127,12 +127,16 @@ function MyComponent(): JSX.Element {
     }
   };
 
+  const handleReset = () => {
+    setPrompt(initialState);
+  };
+
   return (
-    <div className="mt-20">
-      <div className="w-full flex justify-center text-center">
+    <div className="mt-20 ">
+      <div className="w-full flex justify-center text-center mb-20">
         <h1 className="text-7xl text-slate-800">
           {`Welcome to `}
-          <span className=" bg-gradient-to-r from-[#FFC0CB] via-[#FDFD96] to-[#90EE90] inline-block text-transparent bg-clip-text leading-relaxed">
+          <span className="drop-shadow-2xl bg-gradient-to-r from-[#fc869a]  to-[#8a48fc]  inline-block text-transparent bg-clip-text leading-relaxed">
             Adjective
           </span>
         </h1>
@@ -146,10 +150,11 @@ function MyComponent(): JSX.Element {
       ) : (
         <HowToDiv />
       )}
-      <InputGroup
+      <Generate
         handleAdd={handleAdd}
         handleSubmit={handleSubmit}
         isLoading={isLoading}
+        handleReset={handleReset}
       />
       <StoryItemGroup
         prompt={prompt}
@@ -158,7 +163,7 @@ function MyComponent(): JSX.Element {
         handleAdd={handleAdd}
       />
 
-      <div className="h-96 flex justify-end items-end w-full"></div>
+      <div className="h-96"></div>
     </div>
   );
 }

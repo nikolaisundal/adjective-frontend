@@ -10,9 +10,9 @@ export default function HowToDiv() {
   return (
     <>
       {displayHowToDiv ? (
-        <div className="w-11/12 sm:w-5/6 md:w-3/4 mx-auto max-w-4xl mt-20 mb-20 p-5 rounded-lg">
-          <p className="text-center text-xl font-bold">Instructions</p>
-          <div className="p-4 mt-4 bg-amber-100 rounded-lg font-semibold text-lg border border-black">
+        <div className="w-11/12 sm:w-5/6 md:w-3/4 mx-auto max-w-4xl mb-20 p-5 rounded-lg">
+          <div className="p-4 mt-4 bg-slate-100 rounded-lg font-semibold text-lg border border-black">
+            <p className="text-center text-2xl font-bold mb-2">Instructions:</p>
             <ul>
               <li className="py-2">
                 Adjective is a story generator which uses AI🤖 to create a story
@@ -36,10 +36,10 @@ export default function HowToDiv() {
             </ul>
             <div className="text-center mt-4">
               <button
-                className="bg-purple-400 p-2 rounded-lg border border-black font-normal"
+                className="bg-green-300 p-2 rounded-lg border-2 border-black font-semibold hover:scale-105 ease-in duration-200"
                 onClick={handleSetDisplayHowToDiv}
               >
-                OK, close.
+                OK, close
               </button>
             </div>
           </div>
