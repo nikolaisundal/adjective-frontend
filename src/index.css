@@ -14,7 +14,7 @@
 }
 
 body {
-  background-color: #c9c6c9;
+  background-color: #cdc6d8;
 
   font-family: "Public Sans", sans-serif;
   font-optical-sizing: auto;
@@ -25,3 +25,5 @@ body {
 .shared-style {
   transition: all 0.2s ease;
 }
+
+/* background-color: #c9c6c9; */

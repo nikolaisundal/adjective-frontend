@@ -4,6 +4,7 @@ import Generate from "./Generate";
 import StoryWindow from "./StoryWindow";
 import StoryItemGroup from "./StoryItemGroup";
 import HowToDiv from "./HowToDiv";
+import Modal from "./Modal";
 
 type StoryWindowProps = {
   handleStoryOnChange: (params: {
@@ -46,6 +47,8 @@ function MyComponent(): JSX.Element {
   const [prompt, setPrompt] = useState<Prompt>(initialState);
   const [generatedText, setGeneratedText] = useState<string>("");
   const [isLoading, setIsLoading] = useState(false);
+  const [modalActive, setModalActive] = useState(true);
+  const [modalMessage, setModalmessage] = useState<string>("");
 
   const handleSubmit = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
@@ -72,11 +75,19 @@ function MyComponent(): JSX.Element {
   };
 
   const handleAdd = (name: keyof Prompt, inputValue: string) => {
+    console.log(modalActive, name, prompt.adjectives.length);
     if (name === "setting" || name === "mood") {
       setPrompt((prevPrompt) => {
         const newItem = inputValue;
         return { ...prevPrompt, [name]: newItem };
       });
+    }
+    if (
+      (name === "adjectives" && prompt.adjectives.length > 20) ||
+      (name === "names" && prompt.names.length > 6)
+    ) {
+      setModalActive(true);
+      return;
     } else {
       setPrompt((prevPrompt) => {
         const newItem = [
@@ -162,8 +173,12 @@ function MyComponent(): JSX.Element {
         handleRemove={handleRemove}
         handleAdd={handleAdd}
       />
-
-      <div className="h-96"></div>
+      <Modal
+        isOpen={modalActive}
+        onClose={() => setModalActive(false)}
+        message="You've reached the maximum limit for this field!"
+      />
+      <div className="h-96"> </div>
     </div>
   );
 }
