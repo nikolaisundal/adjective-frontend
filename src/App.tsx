@@ -47,7 +47,7 @@ function MyComponent(): JSX.Element {
   const [prompt, setPrompt] = useState<Prompt>(initialState);
   const [generatedText, setGeneratedText] = useState<string>("");
   const [isLoading, setIsLoading] = useState(false);
-  const [modalActive, setModalActive] = useState(true);
+  const [modalActive, setModalActive] = useState(false);
   const [modalMessage, setModalmessage] = useState<string>("");
 
   const handleSubmit = async (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -83,9 +83,11 @@ function MyComponent(): JSX.Element {
       });
     }
     if (
-      (name === "adjectives" && prompt.adjectives.length > 20) ||
-      (name === "names" && prompt.names.length > 6)
+      (name === "adjectives" && prompt.adjectives.length > 19) ||
+      (name === "names" && prompt.names.length > 5)
     ) {
+      const modalString = `You can't add more than ${prompt[name].length} ${name}.`;
+      setModalmessage(modalString);
       setModalActive(true);
       return;
     } else {
@@ -176,7 +178,7 @@ function MyComponent(): JSX.Element {
       <Modal
         isOpen={modalActive}
         onClose={() => setModalActive(false)}
-        message="You've reached the maximum limit for this field!"
+        message={modalMessage}
       />
       <div className="h-96"> </div>
     </div>
