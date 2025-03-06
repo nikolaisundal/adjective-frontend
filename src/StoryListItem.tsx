@@ -103,7 +103,7 @@ export default function StoryListItem({
       ) : (
         <>
           <button
-            className={`relative border-2 p-2 border-black whitespace-pre-wrap rounded-lg ${colour} w-60 cursor-pointer min-h-[3rem] font-bold`}
+            className={`relative border-2 p-2 border-black whitespace-pre-wrap rounded-lg ${colour} w-60 cursor-pointer min-h-[3rem] font-bold hover:scale-105 ease-in duration-200`}
             onClick={handleInputModeActive}
           >
             <p className="text-center text-slate-800">

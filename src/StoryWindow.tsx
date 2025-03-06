@@ -26,7 +26,7 @@ export default function StoryWindow({
     }
   }, [generatedText, inputModeActive]);
   return (
-    <div className="w-11/12 sm:w-5/6 md:w-3/4 mx-auto max-w-4xl mt-20 mb-20 p-5 rounded-lg">
+    <div className="w-11/12 sm:w-5/6 md:w-3/4 mx-auto max-w-[50rem] mt-20 mb-20 p-5 sm:p-0 rounded-lg">
       <p className="text-center text-2xl font-bold">Your story:</p>
       {inputModeActive ? (
         <>

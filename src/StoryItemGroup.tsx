@@ -53,7 +53,7 @@ export default function StoryItemGroup({
         <div className="mb-4">
           <h1 className="font-bold mr-1">Names:</h1>
           {nameInputActive ? (
-            <div className="relative z-10 w-fit">
+            <div className="relative z-10 w-fit hover:scale-105 ease-in duration-200">
               <button
                 className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-red-400 w-11 p-1 rounded-full textblack hover:text-gray-600 border-2 border-black text-lg"
                 onMouseDown={() => {
@@ -93,7 +93,7 @@ export default function StoryItemGroup({
           ) : (
             <button
               onClick={() => setNameInputActive(true)}
-              className={`border-2 p-2 mt-2 mx-auto sm:mr-2 border-black whitespace-pre-wrap bg-[#FFC0CB] rounded-lg w-60 cursor-pointer min-h-[3rem] font-bold`}
+              className={`border-2 p-2 mt-2 mx-auto sm:mr-2 border-black whitespace-pre-wrap bg-[#FFC0CB] rounded-lg w-60 cursor-pointer min-h-[3rem] font-bold hover:scale-105 ease-in duration-200`}
             >
               <p className="text-center text-slate-800">Add a name</p>
             </button>
@@ -145,7 +145,7 @@ export default function StoryItemGroup({
       <div className=" px-4 pb-4 sm:pt-4 w-full border-blue-600">
         <h1 className="font-bold mr-1">Adjectives:</h1>
         {adjectiveInputActive ? (
-          <div className="relative z-10 w-fit">
+          <div className="relative z-10 w-fit hover:scale-105 ease-in duration-200">
             <button
               className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-red-400 w-11 p-1 rounded-full textblack hover:text-gray-600 border-2 border-black text-lg"
               onMouseDown={() => {
@@ -185,7 +185,7 @@ export default function StoryItemGroup({
         ) : (
           <button
             onClick={() => setAdjectiveInputActive(true)}
-            className={`border-2 p-2 mt-2 mx-auto sm:mr-2 border-black whitespace-pre-wrap bg-blue-300 rounded-lg w-60 cursor-pointer min-h-[3rem] font-bold`}
+            className={`border-2 p-2 mt-2 mx-auto sm:mr-2 border-black whitespace-pre-wrap bg-blue-300 rounded-lg w-60 cursor-pointer min-h-[3rem] font-bold hover:scale-105 ease-in duration-200`}
           >
             <p className="text-center text-slate-800">Add an adjective</p>
           </button>

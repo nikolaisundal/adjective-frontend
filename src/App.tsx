@@ -63,7 +63,14 @@ function MyComponent(): JSX.Element {
         prompt,
       }),
     })
-      .then((response: Response) => response.json())
+      .then((response: Response) => {
+        if (!response.ok) {
+          throw new Error(
+            `Server error: ${response.status} ${response.statusText}`
+          );
+        }
+        return response.json();
+      })
       .then((data: any) => {
         setIsLoading(false);
         setGeneratedText(data.text);
@@ -75,7 +82,6 @@ function MyComponent(): JSX.Element {
   };
 
   const handleAdd = (name: keyof Prompt, inputValue: string) => {
-    console.log(modalActive, name, prompt.adjectives.length);
     if (name === "setting" || name === "mood") {
       setPrompt((prevPrompt) => {
         const newItem = inputValue;
@@ -142,39 +148,41 @@ function MyComponent(): JSX.Element {
 
   const handleReset = () => {
     setPrompt(initialState);
+    setGeneratedText("");
   };
 
   return (
     <div className="mt-20 ">
-      <div className="w-full flex justify-center text-center mb-20">
-        <h1 className="text-7xl text-slate-800">
-          {`Welcome to `}
-          <span className="drop-shadow-2xl bg-gradient-to-r from-[#fc869a]  to-[#8a48fc]  inline-block text-transparent bg-clip-text leading-relaxed">
+      <div className="w-full flex justify-center text-center mb-20 ">
+        <h1 className="text-4xl sm:text-5xl text-slate-800 leading-relaxed mx-4">
+          {`Get creative with `}
+          <span className="drop-shadow-2xl bg-gradient-to-r from-[#fc869a]  to-[#8a48fc]  inline-block text-transparent bg-clip-text text-7xl">
             Adjective
           </span>
         </h1>
       </div>
 
-      {generatedText ? (
-        <StoryWindow
-          generatedText={generatedText}
-          handleStoryOnChange={handleStoryOnChange}
-        />
-      ) : (
-        <HowToDiv />
-      )}
+      <HowToDiv />
+
       <Generate
         handleAdd={handleAdd}
         handleSubmit={handleSubmit}
         isLoading={isLoading}
         handleReset={handleReset}
       />
+      {generatedText ? (
+        <StoryWindow
+          generatedText={generatedText}
+          handleStoryOnChange={handleStoryOnChange}
+        />
+      ) : null}
       <StoryItemGroup
         prompt={prompt}
         handleOnChange={handleOnChange}
         handleRemove={handleRemove}
         handleAdd={handleAdd}
       />
+
       <Modal
         isOpen={modalActive}
         onClose={() => setModalActive(false)}
